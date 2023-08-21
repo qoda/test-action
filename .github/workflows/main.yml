@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  check-committer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Commit Author
+        uses: semcelik/commit-author-action@v1.0.0
+        with:
+          email_domain: 'gmail.com'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          error_on_fail: true
+          
